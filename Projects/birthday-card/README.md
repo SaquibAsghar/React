@@ -1,10 +1,20 @@
-# Getting Started with Create React App
+# Friends Birthday Reminder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, we'll create simple friends birthday card using useStae hook.
 
-## Available Scripts
+In this the user will be able to see the list of friends sharing birthday on that particular date. The project will be use as a reminder ⏰ to user so that user do not forget to wish dear ones 🥰.
 
-In the project directory, you can run:
+## Steps
+
+First we navigate to our favourite editor (I use [VS code](http://google.com)😍) and open in-built editor terminal and type 
+```
+    npm create-react-app birthday-card
+```
+
+<!-- ```js
+    let a = 1
+    console.log(a)
+``` -->
 
 ### `npm start`
 
