@@ -56,7 +56,7 @@ section {
 	display: flex;
 	margin: 15px 0px;
 	padding-bottom: 2px;
-	/* border-bottom: 2px solid #a2a2a2; */
+	border-bottom: 2px solid #a2a2a2;
 }
 
 .img-container {
