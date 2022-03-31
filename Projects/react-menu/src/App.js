@@ -1,14 +1,13 @@
-import './App.css';
-import { menuItems } from './menus';
+import "./App.css";
+import { menuItems } from "./menus";
 
 function App() {
-  return (
-    <div className="App">
-      {
-        menuItems.map(menu => console.log(menu))
-      }
-    </div>
-  );
+	return (
+		<div>
+			<h1>Hello</h1>
+			{menuItems.map((menu) => console.log(menu))}
+		</div>
+	);
 }
 
 export default App;
