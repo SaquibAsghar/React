@@ -31,6 +31,11 @@
     color: #f1f1f1;
     background-color: #808080;
 }
+.questions-flexbox-container:nth-of-type(even){
+    color: #3a3a3a;
+    background-color: #f1f1f1cb;
+    margin: 5px 0px;
+}
 
 .questions-flexbox-container:nth-of-type(10) .questions{
     border-bottom: none;
