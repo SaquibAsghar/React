@@ -1,0 +1,34 @@
+.main-flexbox-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card{
+  max-width: 500px;
+  border: 1px solid rgb(206, 193, 195);
+  margin:  10px auto;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  box-shadow: 1px 2px 1px 3px #a1a1a1;
+}
+
+.toggle-icon{
+  /* align-self: baseline; */
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  margin-top: 1.2em;
+  margin-bottom: 2px;
+
+}
+
+.chevron-left:hover,
+.chevron-right:hover{
+  cursor: pointer;
+}

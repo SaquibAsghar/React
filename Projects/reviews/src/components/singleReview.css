@@ -1,0 +1,26 @@
+section {
+	margin: 10px 0px;
+}
+.people-review-flexbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+header {
+	align-self: center;
+}
+
+.people-review-img {
+	border-radius: 50%;
+	/* border: 3px solid salmon; */
+    box-shadow: 6px -2px 2px rgb(223, 60, 31);
+}
+
+div:nth-of-type(4) {
+	color: blue;
+	text-align: center;
+	line-height: 1.8em;
+}
