@@ -15,12 +15,22 @@ header {
 
 .people-review-img {
 	border-radius: 50%;
-	/* border: 3px solid salmon; */
     box-shadow: 6px -2px 2px rgb(223, 60, 31);
 }
 
+div:nth-of-type(2){
+	font-weight: 700;
+	font-size: 20px;
+
+}
+
+div:nth-of-type(3){
+	font-weight: 600;
+	font-size: 18px;
+}
+
 div:nth-of-type(4) {
-	color: blue;
+	color: rgb(255, 255, 255);
 	text-align: center;
 	line-height: 1.8em;
 }

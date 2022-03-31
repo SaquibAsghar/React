@@ -1,8 +1,7 @@
 import React from "react";
-import "./singleReview.css"
+import "./singleReview.css";
 
-const SingleReview = ({ id, name, designation, image, review }) => {
-	// console.log(id, name, designation, image, review);
+const SingleReview = ({ name, designation, image, review }) => {
 	return (
 		<section className="people-review-flexbox">
 			<div>

@@ -18,7 +18,7 @@ export const reveiewData = [
 	{
 		id: 3,
 		name: "Lukas Budimaier",
-		designation: "Tenis Player",
+		designation: "Piano Player",
 		review:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse placeat alias hic vero. Ad consequuntur qui aliquam quos repudiandae.",
 		image: "https://picsum.photos/id/1082/100/100.jpg",
