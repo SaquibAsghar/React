@@ -1,0 +1,16 @@
+.btn{
+    width: 100px;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    text-transform: capitalize;
+
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(221, 159, 159);
+}
