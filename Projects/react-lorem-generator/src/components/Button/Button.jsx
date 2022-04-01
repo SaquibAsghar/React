@@ -1,4 +1,5 @@
 import React from "react";
+import './ButtonStyles.css'
 
 const Button = ({ title, generateLoremHandler }) => {
 	return (

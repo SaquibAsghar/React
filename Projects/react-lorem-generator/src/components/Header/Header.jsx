@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect, Children } from "react";
 import Button from "../Button/Button";
+import Loading from "../Loading/Loading";
 import LoremList from "../Lorems/LoremList/LoremList";
+
+import "./HeaderStyles.css";
 
 const Header = ({ title }) => {
 	const [data, setData] = useState({
@@ -13,7 +16,9 @@ const Header = ({ title }) => {
 		isGenerateLorem: false,
 	});
 
-	const loremAPI = `https://hipsum.co/api/?type=hipster-centric&paras=${data.count}`;
+	// console.log(data);
+
+	const loremAPI = `https://hipsum.co/api/?type=hipster-centric&paras=${data.count}&start-with-lorem=1`;
 
 	const inputRef = useRef(null);
 
@@ -29,8 +34,11 @@ const Header = ({ title }) => {
 	const fetchLorem = async () => {
 		const result = await fetch(loremAPI);
 		const response = await result.json();
-		console.log(response);
-		setData((prevData) => ({ ...prevData, lorems: response }));
+		setData((prevData) => ({
+			...prevData,
+			lorems: response,
+			isGenerateLorem: !prevData.isGenerateLorem,
+		}));
 	};
 
 	const generateLoremHandler = () => {
@@ -46,29 +54,32 @@ const Header = ({ title }) => {
 	});
 
 	return (
-		<div>
+		<>
 			<div>
 				<header>{title}</header>
 			</div>
-			<div>
-				<span>Paragraph : </span>
-				<input
-					ref={inputRef}
-					type="number"
-					min={min}
-					max={max}
-					value={data.count}
-					name="count"
-					onChange={onRangeHandler}
-				/>
+			<div className="flex-container">
+				<div>
+					<span className="para">Paragraphs : </span>
+					<input
+						ref={inputRef}
+						type="number"
+						min={min}
+						max={max}
+						value={data.count}
+						name="count"
+						onChange={onRangeHandler}
+					/>
+				</div>
+				<Button title="Generate" generateLoremHandler={generateLoremHandler} />
 			</div>
-			<Button title="generate" generateLoremHandler={generateLoremHandler} />
 			<main>
+				{data.isGenerateLorem ? <Loading /> : ""}
 				{data.lorems.map((lorem, index) => (
 					<LoremList key={index} lorem={lorem} />
 				))}
 			</main>
-		</div>
+		</>
 	);
 };
 

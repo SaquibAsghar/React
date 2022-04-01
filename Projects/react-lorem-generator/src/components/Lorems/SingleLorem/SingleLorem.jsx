@@ -1,7 +1,8 @@
 import React from "react";
+import "./SingleLoremStyles.css"
 
 const SingleLorem = ({ lorem }) => {
-	return <div>{lorem}</div>;
+	return <article>{lorem}</article>;
 };
 
 export default SingleLorem;

@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SingleLorem from "../SingleLorem/SingleLorem";
 
+
+
 const LoremList = ({ lorem }) => {
-	return (
-		<div>
-			<SingleLorem lorem={lorem} />
-		</div>
-	);
+    useEffect(()=>{}, [lorem])
+	return <SingleLorem lorem={lorem} />;
 };
 
 export default LoremList;
