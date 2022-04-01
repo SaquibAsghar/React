@@ -7,22 +7,22 @@
 }
 
 header{
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 700;
   /* width: 1px; */
 }
 
 .underline{
   border-bottom: 3px solid red;
-  height: 0px;
-  width: 100px;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .navbar{
   margin: 30px 0px 50px;
   max-width: 600px;
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   justify-content: space-between;
 }
 

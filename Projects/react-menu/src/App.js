@@ -33,8 +33,10 @@ function App() {
 
 	return (
 		<div className="container">
-			<header>Our Menu</header>
-			<div className="underline"></div>
+			<header>
+				<h1>Our Menu</h1>
+				<div className="underline"></div>
+			</header>
 			<nav className="navbar">
 				<button className="btn" onClick={() => onClickHandler()}>
 					All

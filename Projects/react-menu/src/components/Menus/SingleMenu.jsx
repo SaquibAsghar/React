@@ -19,6 +19,7 @@ const SingleMenu = ({ title, price, desc, img }) => {
 						{price}
 					</h4>
 				</div>
+				<div className="underline menu-underline"></div>
 				<p>{desc}</p>
 			</div>
 		</div>
