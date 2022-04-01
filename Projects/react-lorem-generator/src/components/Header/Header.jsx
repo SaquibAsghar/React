@@ -60,7 +60,7 @@ const Header = ({ title }) => {
 			</div>
 			<div className="flex-container">
 				<div>
-					<span className="para">Paragraphs : </span>
+					<span className="para">Paragraph : </span>
 					<input
 						ref={inputRef}
 						type="number"
