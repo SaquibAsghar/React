@@ -21,11 +21,13 @@ function App() {
 
 			return newCategory;
 		});
-		setCategory(newCategory);
+		setCategory(["all", ...newCategory]);
 	}, []);
 
+	console.log(category)
+
 	const onClickHandler = (type) => {
-		if (type) {
+		if (type !== "all") {
 			const newMenuList = menuItems.filter((menu) => menu.category === type);
 			return setMenus(newMenuList);
 		} else setMenus(menuItems);
@@ -38,9 +40,6 @@ function App() {
 				<div className="underline"></div>
 			</header>
 			<nav className="navbar">
-				<button className="btn" onClick={() => onClickHandler()}>
-					All
-				</button>
 				{category.map((cat, ind) => (
 					<div key={ind}>
 						{<Button type={cat} onClickHandler={onClickHandler} />}
