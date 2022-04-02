@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Values from "values.js";
+import MultiColorList from "./components/MultiColorList/MultiColorList";
 
 function App() {
 	const [color, setColor] = useState("");
 	const [error, setError] = useState(false);
+	const [generateColor, setGenerateColor] = useState(false);
 	const [colorList, setColorList] = useState([]);
 	const [inputStyle, setInputStyle] = useState({});
 
@@ -42,14 +44,15 @@ function App() {
 			})
 		);
 	};
-
-	const inputColor = useRef(null);
-
 	const onColorInputHandeler = (e) => {
 		const { value } = e.target;
 		setColor(value);
 		setInputStyle({});
 	};
+	const inputColor = useRef(null);
+	useEffect(() => {
+		inputColor.current.focus();
+	});
 
 	useEffect(() => {
 		const colorArray = new Values("#f15025").all(10);
@@ -64,10 +67,6 @@ function App() {
 			})
 		);
 	}, []);
-
-	useEffect(() => {
-		inputColor.current.focus();
-	});
 
 	useEffect(() => {
 		setInputStyle({});
@@ -93,23 +92,10 @@ function App() {
 			</div>
 			<div className="colors-container">
 				{colorList.map((color, index) => {
-					const { hex, weight, type } = color;
+					const { type } = color;
 					const textColor = type !== "shade" ? "#000" : "#fff";
 					return (
-						<div
-							className="color-card"
-							key={index}
-							style={{
-								backgroundColor: `#${hex}`,
-								color: textColor,
-								border: `2px solid #${hex}`,
-							}}
-						>
-							<div className="text">
-								<p>{weight}%</p>
-								<p>{`#${hex}`}</p>
-							</div>
-						</div>
+						<MultiColorList key={index} {...color} textColor={textColor} />
 					);
 				})}
 			</div>

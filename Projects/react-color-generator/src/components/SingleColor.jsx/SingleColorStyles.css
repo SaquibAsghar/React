@@ -1,0 +1,12 @@
+.icon-container{
+    align-self: flex-end;
+}
+
+.clip-icon{
+    cursor: pointer;
+}
+
+.text{
+    text-align: center;
+    margin-top: 20px;
+}

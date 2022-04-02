@@ -15,7 +15,6 @@ form{
 label{
   color: beige;
   font-size: 35px;
-  /* align-self: center; */
 }
 input{
   height: 35px;
@@ -29,7 +28,6 @@ input{
 }
 
 .btn{
- 
   padding: 10px 20px;
   border-radius: 7px;
   border: none;
@@ -50,19 +48,4 @@ input{
   max-width: 1300px;
 
 }
-.color-card{
-  width: 25%;
-  height: 150px;
-  padding: 20px;
-  flex-grow: 2;
 
-}
-
-.color-card:nth-last-child(1){
-  flex-grow: 0;
-
-}
-.text{
-  text-align: center;
-  margin-top: 20px;
-}
