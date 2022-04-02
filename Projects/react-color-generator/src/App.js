@@ -29,7 +29,6 @@ function App() {
 		}
 	};
 
-
 	const fetchColors = () => {
 		const colorArray = new Values(color).all(10);
 		setColorList(
@@ -68,7 +67,7 @@ function App() {
 
 	useEffect(() => {
 		inputColor.current.focus();
-	},);
+	});
 
 	useEffect(() => {
 		setInputStyle({});
