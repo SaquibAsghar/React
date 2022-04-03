@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { FaPlusCircle } from "react-icons/fa";
+import { FaPlusCircle, FaEdit } from "react-icons/fa";
 
 import Banner from "./components/Banner/Banner";
 // import Button from "./components/Button/Button";
@@ -22,8 +22,15 @@ function App() {
 		setGrossary(value.trim());
 	};
 
+	const onEditHandler = (editID) => {
+		setGrossaryItemID(editID);
+		const editItem = grossaryList.filter((item) => item.id === grossaryItemID);
+		const { grossary } = editItem[0];
+		setGrossary(grossary);
+		setIsEdit(true);
+	};
+
 	const onSubmitHandler = (e) => {
-		console.log("Clicked");
 		e.preventDefault();
 		if (grossary) {
 			const newItem = {
@@ -68,12 +75,16 @@ function App() {
 				<div className="form-group">
 					<form>
 						<input type="text" value={grossary} onChange={onChangeHandler} />
-						<button onClick ={onSubmitHandler}>
-							<FaPlusCircle className="btn add" />
+						<button className="btn add" onClick={onSubmitHandler}>
+							{isEdit ? <FaEdit /> : <FaPlusCircle />}
 						</button>
 					</form>
 				</div>
-				<GrosarryList grossaryList={grossaryList} cta={onDeleteHandler} />
+				<GrosarryList
+					grossaryList={grossaryList}
+					onDeleteHandler={onDeleteHandler}
+					onEditHandler={onEditHandler}
+				/>
 			</div>
 		</div>
 	);

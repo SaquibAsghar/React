@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
-import { FaEdit, FaTrash } from "react-icons/fa";
-// import Button from "../Button/Button";
+import { FaTrash } from "react-icons/fa";
 import SingleGrosarry from "../SingleGrossary/SingleGrosarry";
 
-const GrosarryList = ({ grossaryList, cta }) => {
+const GrosarryList = ({ grossaryList, onDeleteHandler, onEditHandler }) => {
 	return (
 		<div>
 			{grossaryList.map((item) => (
-				<SingleGrosarry key={item.id} item={item} cta={cta} />
+				<SingleGrosarry
+					key={item.id}
+					item={item}
+					onDeleteHandler={onDeleteHandler}
+					onEditHandler={onEditHandler}
+				/>
 			))}
 			{grossaryList.length > 1 && (
-				<button className="btn btnClearAll" onClick={() => cta()}>
+				<button className="btn btnClearAll" onClick={() => onDeleteHandler()}>
 					Clear All <FaTrash />
 				</button>
 			)}

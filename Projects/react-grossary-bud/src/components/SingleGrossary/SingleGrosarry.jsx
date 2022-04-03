@@ -1,19 +1,18 @@
 import React from "react";
-// import Button from "../Button/Button";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 import "./SingleGrossaryStyles.css";
 
-const SingleGrosarry = ({ item, cta }) => {
+const SingleGrosarry = ({ item, onEditHandler, onDeleteHandler }) => {
 	return (
 		<>
 			<article>
 				<div className="title">{item.grossary}</div>
-				<button className="btn edit" >
+				<button className="btn edit" onClick={() => onEditHandler(item.id)}>
 					<FaEdit />
 				</button>
-				<button className="btn delete" onClick={() => cta(item.id)}>
-					<FaTrash  />
+				<button className="btn delete" onClick={() => onDeleteHandler(item.id)}>
+					<FaTrash />
 				</button>
 			</article>
 		</>

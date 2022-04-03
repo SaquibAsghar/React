@@ -17,7 +17,7 @@ article:hover{
     border: none;
     background-color: transparent;
     font-size: 16px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
 }
 .btn:hover{
     cursor: pointer;
@@ -39,13 +39,15 @@ article:hover{
     font-weight: 700;
 }
 
-.edit{
+
+
+.edit, .add{
     color: #74d174;
     
 }
 
 
-.edit:hover{
+.edit:hover, .add:hover{
     color: green;
 }
 
