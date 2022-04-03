@@ -8,7 +8,7 @@ const Banner = ({ type, message, setBanner, grossaryList }) => {
 				message: "",
 				display: false,
 			});
-		}, 2000);
+		}, 900);
 		return () => clearTimeout(timerID);
 	}, [grossaryList]);
 	return <p className={type}>{message}</p>;
