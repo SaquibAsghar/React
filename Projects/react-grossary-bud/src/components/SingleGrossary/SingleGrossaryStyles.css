@@ -13,3 +13,45 @@ article:hover{
     flex-grow: 3;
     font-size: 20px;
 }
+.btn{
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    margin-left: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+.btnClearAll{
+    width: 100%;
+    background-color: #f73c3c;
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    
+}
+
+.btnClearAll:hover{
+    background-color: red;
+    color: antiquewhite;
+    font-weight: 700;
+}
+
+.edit{
+    color: #74d174;
+    
+}
+
+
+.edit:hover{
+    color: green;
+}
+
+.delete{
+    color: #e49292;
+}
+.delete:hover{
+    color: red;
+}

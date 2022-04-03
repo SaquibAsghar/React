@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
+import { FaPlusCircle } from "react-icons/fa";
+
 import Banner from "./components/Banner/Banner";
+// import Button from "./components/Button/Button";
 import GrosarryList from "./components/GrosaaryList/GrosarryList";
 
 function App() {
@@ -20,6 +23,7 @@ function App() {
 	};
 
 	const onSubmitHandler = (e) => {
+		console.log("Clicked");
 		e.preventDefault();
 		if (grossary) {
 			const newItem = {
@@ -38,30 +42,38 @@ function App() {
 		}
 	};
 
+	const onDeleteHandler = (id = "") => {
+		return id
+			? setGrossaryList((prevList) => prevList.filter((list) => list.id !== id))
+			: setGrossaryList([]);
+	};
+
 	return (
 		<div className="container">
 			<div className="group">
 				<header>
 					{
-          //   banner.display && (
-					// 	<div>
-					// 		<Banner
-					// 			{...banner}
-					// 			setBanner={setBanner}
-					// 			grossaryList={grossaryList}
-					// 		/>
-					// 	</div>
-					// )
-        }
+						//   banner.display && (
+						// 	<div>
+						// 		<Banner
+						// 			{...banner}
+						// 			setBanner={setBanner}
+						// 			grossaryList={grossaryList}
+						// 		/>
+						// 	</div>
+						// )
+					}
 					<h1>Grossary Bud</h1>
 				</header>
 				<div className="form-group">
 					<form>
 						<input type="text" value={grossary} onChange={onChangeHandler} />
-						<button onClick={onSubmitHandler}>Add</button>
+						<button onClick ={onSubmitHandler}>
+							<FaPlusCircle className="btn add" />
+						</button>
 					</form>
 				</div>
-				<GrosarryList grossaryList={grossaryList} />
+				<GrosarryList grossaryList={grossaryList} cta={onDeleteHandler} />
 			</div>
 		</div>
 	);
