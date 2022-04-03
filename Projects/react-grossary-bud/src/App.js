@@ -3,7 +3,6 @@ import "./App.css";
 import { FaPlusCircle, FaEdit } from "react-icons/fa";
 
 import Banner from "./components/Banner/Banner";
-// import Button from "./components/Button/Button";
 import GrosarryList from "./components/GrosaaryList/GrosarryList";
 
 function App() {
