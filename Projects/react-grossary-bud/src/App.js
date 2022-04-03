@@ -22,16 +22,34 @@ function App() {
 	};
 
 	const onEditHandler = (editID) => {
-		setGrossaryItemID(editID);
-		const editItem = grossaryList.filter((item) => item.id === grossaryItemID);
-		const { grossary } = editItem[0];
+		const editItem = grossaryList.find((item) => item.id === editID);
+		const { grossary } = editItem;
 		setGrossary(grossary);
 		setIsEdit(true);
+		setGrossaryItemID(editID);
 	};
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
-		if (grossary) {
+		if (grossary && grossaryItemID) {
+			setGrossaryList((prevList) =>
+				prevList.map((item) => {
+					if (item.id === grossaryItemID) {
+						return { ...item, grossary };
+					} else {
+						return item;
+					}
+				})
+			);
+			setIsEdit(false);
+			setGrossaryItemID(null);
+			setBanner({
+				type: "success",
+				message: "Grossary Updated",
+				display: true,
+			});
+			return;
+		} else if (grossary) {
 			const newItem = {
 				id: new Date().getTime().toString(),
 				grossary,
@@ -46,6 +64,7 @@ function App() {
 				display: true,
 			});
 		}
+		return;
 	};
 
 	const onDeleteHandler = (id = "") => {
@@ -58,17 +77,15 @@ function App() {
 		<div className="container">
 			<div className="group">
 				<header>
-					{
-						//   banner.display && (
-						// 	<div>
-						// 		<Banner
-						// 			{...banner}
-						// 			setBanner={setBanner}
-						// 			grossaryList={grossaryList}
-						// 		/>
-						// 	</div>
-						// )
-					}
+					{banner.display && (
+						<div>
+							<Banner
+								{...banner}
+								setBanner={setBanner}
+								grossaryList={grossaryList}
+							/>
+						</div>
+					)}
 					<h1>Grossary Bud</h1>
 				</header>
 				<div className="form-group">
