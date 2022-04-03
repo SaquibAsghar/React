@@ -1,0 +1,6 @@
+article{
+    display: flex;
+    width: 300px;
+    margin: 30px 0px 20px;
+    justify-content: space-between;
+}

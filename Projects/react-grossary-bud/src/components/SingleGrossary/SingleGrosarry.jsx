@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Button from "../Button/Button";
 
-const SingleGrosarry = () => {
-  return (
-    <div>SingleGrosarry</div>
-  )
-}
+import './SingleGrossaryStyles.css'
 
-export default SingleGrosarry
+const SingleGrosarry = ({ item }) => {
+	return (
+		<article>
+			<div className="title">{item.grossary}</div>
+			<Button />
+		</article>
+	);
+};
+
+export default SingleGrosarry;
