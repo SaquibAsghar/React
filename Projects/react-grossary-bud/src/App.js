@@ -39,26 +39,30 @@ function App() {
 	};
 
 	return (
-		<div>
-			<header>
-				{banner.display && (
-					<div>
-						<Banner
-							{...banner}
-							setBanner={setBanner}
-							grossaryList={grossaryList}
-						/>
-					</div>
-				)}
-				<h1>Grossary Bud</h1>
-			</header>
-			<div className="form-group">
-				<form>
-					<input type="text" value={grossary} onChange={onChangeHandler} />
-					<button onClick={onSubmitHandler}>Add</button>
-				</form>
+		<div className="container">
+			<div className="group">
+				<header>
+					{
+          //   banner.display && (
+					// 	<div>
+					// 		<Banner
+					// 			{...banner}
+					// 			setBanner={setBanner}
+					// 			grossaryList={grossaryList}
+					// 		/>
+					// 	</div>
+					// )
+        }
+					<h1>Grossary Bud</h1>
+				</header>
+				<div className="form-group">
+					<form>
+						<input type="text" value={grossary} onChange={onChangeHandler} />
+						<button onClick={onSubmitHandler}>Add</button>
+					</form>
+				</div>
+				<GrosarryList grossaryList={grossaryList} />
 			</div>
-			<GrosarryList grossaryList={grossaryList} />
 		</div>
 	);
 }

@@ -1,15 +1,11 @@
 import React from "react";
-import { FaEdit, FaTrash } from "react-icons/fa";
-const Button = () => {
+
+import "./ButtonStyles.css";
+const Button = ({ children, btnClearAll = "" }) => {
 	return (
-		<div>
-			<button>
-				<FaEdit />
-			</button>
-			<button>
-				<FaTrash />
-			</button>
-		</div>
+		<>
+			<button className={`btn ${btnClearAll}`}>{children}</button>
+		</>
 	);
 };
 
