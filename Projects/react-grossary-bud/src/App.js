@@ -58,6 +58,7 @@ function App() {
 			);
 			setIsEdit(false);
 			setGrossaryItemID(null);
+			setGrossary("")
 			setBanner({
 				type: "success",
 				message: "Grossary Updated",
@@ -90,14 +91,16 @@ function App() {
 
 	const onDeleteHandler = (id = "") => {
 		if (id) {
+			// console.log(id);
 			setGrossaryList((prevList) => prevList.filter((list) => list.id !== id));
 			setBanner({
 				type: "danger",
 				message: "Item deleted from the list",
 				display: true,
 			});
+			return
 		}
-		setGrossaryList([]);
+		return setGrossaryList([]);
 	};
 
 	useEffect(() => {
