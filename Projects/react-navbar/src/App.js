@@ -1,6 +1,5 @@
 import "./App.css";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-// import logo from '../public/image/train logo.jpg'
 
 function App() {
 	return (
