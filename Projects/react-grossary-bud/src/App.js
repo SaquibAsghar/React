@@ -1,13 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { FaPlusCircle, FaEdit } from "react-icons/fa";
 
 import Banner from "./components/Banner/Banner";
 import GrosarryList from "./components/GrosaaryList/GrosarryList";
 
+const getLocalStorage = () => {
+	let list = localStorage.getItem("list");
+	if (list) {
+		return JSON.parse(list);
+	} else {
+		return [];
+	}
+};
+
+const setLocalStorage = (list) => {
+	localStorage.setItem("list", JSON.stringify(list));
+};
+
 function App() {
 	const [grossary, setGrossary] = useState("");
-	const [grossaryList, setGrossaryList] = useState([]);
+	const [grossaryList, setGrossaryList] = useState(getLocalStorage());
 	const [grossaryItemID, setGrossaryItemID] = useState(null);
 	const [isEdit, setIsEdit] = useState(false);
 	const [banner, setBanner] = useState({
@@ -16,9 +29,11 @@ function App() {
 		display: false,
 	});
 
+	const inputRef = useRef(null);
+
 	const onChangeHandler = (e) => {
 		const { value } = e.target;
-		setGrossary(value.trim());
+		setGrossary(value);
 	};
 
 	const onEditHandler = (editID) => {
@@ -57,21 +72,41 @@ function App() {
 			};
 
 			setGrossaryList((prevList) => [...prevList, newItem]);
+
 			setGrossary("");
 			setBanner({
 				type: "success",
 				message: "Grossary Added to the List",
 				display: true,
 			});
+			return;
 		}
-		return;
+		return setBanner({
+			type: "danger",
+			message: "Please provide some value to the list.",
+			display: true,
+		});
 	};
 
 	const onDeleteHandler = (id = "") => {
-		return id
-			? setGrossaryList((prevList) => prevList.filter((list) => list.id !== id))
-			: setGrossaryList([]);
+		if (id) {
+			setGrossaryList((prevList) => prevList.filter((list) => list.id !== id));
+			setBanner({
+				type: "danger",
+				message: "Item deleted from the list",
+				display: true,
+			});
+		}
+		setGrossaryList([]);
 	};
+
+	useEffect(() => {
+		inputRef.current.focus();
+	});
+
+	useEffect(() => {
+		setLocalStorage(grossaryList);
+	}, [grossaryList]);
 
 	return (
 		<div className="container">
@@ -90,17 +125,25 @@ function App() {
 				</header>
 				<div className="form-group">
 					<form>
-						<input type="text" value={grossary} onChange={onChangeHandler} />
+						<input
+							type="text"
+							placeholder="eg. Buy milk"
+							ref={inputRef}
+							value={grossary}
+							onChange={onChangeHandler}
+						/>
 						<button className="btn add" onClick={onSubmitHandler}>
 							{isEdit ? <FaEdit /> : <FaPlusCircle />}
 						</button>
 					</form>
 				</div>
-				<GrosarryList
-					grossaryList={grossaryList}
-					onDeleteHandler={onDeleteHandler}
-					onEditHandler={onEditHandler}
-				/>
+				{
+					<GrosarryList
+						grossaryList={grossaryList}
+						onDeleteHandler={onDeleteHandler}
+						onEditHandler={onEditHandler}
+					/>
+				}
 			</div>
 		</div>
 	);

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import './BannerStyle.css'
 
 const Banner = ({ type, message, setBanner, grossaryList }) => {
 	useEffect(() => {

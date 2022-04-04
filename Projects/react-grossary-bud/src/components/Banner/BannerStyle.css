@@ -1,0 +1,16 @@
+.success{
+
+    background-color: rgb(167, 245, 167);
+    color: green;
+}
+
+.success, .danger{
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.danger{
+    background-color: #ebadad;
+    color: red;
+}
