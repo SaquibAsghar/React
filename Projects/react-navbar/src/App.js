@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+// import logo from '../public/image/train logo.jpg'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<nav className="nav-container">
+			<div className="logo-container">
+				<img src={"/image/train_logo.png"} alt="train-logo" />
+				<header className="logo-name">TrainRail</header>
+			</div>
+			<div className="link-container">
+        <ul className="links">
+          <li>Home</li>
+          <li>About</li>
+          <li>Project</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+			<ul className="social-icons">
+				<li>
+					<FaFacebook />
+				</li>
+				<li>
+					<FaInstagram />
+				</li>
+				<li>
+					<FaTwitter />
+				</li>
+				<li>
+					<FaYoutube />
+				</li>
+			</ul>
+		</nav>
+	);
 }
 
 export default App;
