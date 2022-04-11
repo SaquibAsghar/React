@@ -8,11 +8,13 @@ import Error from "./pages/Error";
 function App() {
 	return (
 		<BrowserRouter>
+			<nav>My Nav bar</nav>
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="about" element={<About />} />
-				<Route path="products" element={<Products />} />
-				<Route path="*" element={<Error />} />
+				<Route path="/" element={<Home />}>
+					<Route path="about" element={<About />} />
+					<Route path="products" element={<Products />} />
+					<Route path="*" element={<Error />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);
