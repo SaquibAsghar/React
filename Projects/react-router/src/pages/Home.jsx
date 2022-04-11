@@ -1,19 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Home = () => {
 	return (
 		<section className="section">
-			<h2>Welcome to home page</h2>
-			<Link to="/" className="btn">
-				Home
-			</Link>
-			<Link to="/about" className="btn">
-				About
-			</Link>
-			<Link to="/products" className="btn">
-				Products
-			</Link>
+			<h2>Home page</h2>
+			<Outlet />
 		</section>
 	);
 };

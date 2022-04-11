@@ -8,10 +8,10 @@ const About = () => {
 			<Link to="/" className="btn">
 				Home
 			</Link>
-			<Link to="/about" className="btn">
+			<Link to="about" className="btn">
 				About
 			</Link>
-			<Link to="/products" className="btn">
+			<Link to="products" className="btn">
 				Products
 			</Link>
 		</section>
