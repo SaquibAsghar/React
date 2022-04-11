@@ -31,12 +31,16 @@ form {
     /* overflow: hidden; */
 }
 
+.btn:focus-visible {
+    /* outline: none; */
+}
+
 .search-icon {
     cursor: pointer;
     font-size: 22px;
     color: #2ca6ec;
 }
 
-.search-icon:hover{
+.search-icon:hover .search-icon:focus-visible {
     color: #63ec51;
 }

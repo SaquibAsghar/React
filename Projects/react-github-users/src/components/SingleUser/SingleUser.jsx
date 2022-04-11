@@ -2,6 +2,8 @@ import React from "react";
 import "./SingleUserStyle.css";
 
 const SingleUser = ({ user }) => {
+	console.log("Single user ");
+	if (user.length === 0) return;
 	return (
 		<section className="card-container">
 			<div className="card">
