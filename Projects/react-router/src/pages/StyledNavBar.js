@@ -1,10 +1,35 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const StyledNavBar = () => {
-  return (
-    <div>StyledNavBar</div>
-  )
-}
+	return (
+		<nav>
+			<NavLink
+				style={({ isActive }) => {
+					return { color: isActive ? "red" : "green" };
+				}}
+				to="/"
+			>
+				Home
+			</NavLink>
+			<NavLink
+				style={({ isActive }) => {
+					return { color: isActive ? "red" : "green" };
+				}}
+				to="about"
+			>
+				About
+			</NavLink>
+			<NavLink
+				style={({ isActive }) => {
+					return { color: isActive ? "red" : "green" };
+				}}
+				to="products"
+			>
+				Products
+			</NavLink>
+		</nav>
+	);
+};
 
-export default StyledNavBar
+export default StyledNavBar;
