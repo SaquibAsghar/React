@@ -12,7 +12,7 @@ const About = () => {
 				About
 			</Link>
 			<Link to="/products" className="btn">
-				Pproducts
+				Products
 			</Link>
 		</section>
 	);
