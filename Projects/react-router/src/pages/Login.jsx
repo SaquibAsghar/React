@@ -18,12 +18,12 @@ const Login = ({ setUser }) => {
 	};
 
 	const onSubmitHandler = (e) => {
+        e.preventDefault();
 		if (!loginDetail.username && !loginDetail.password) {
 			return;
 		}
 		setUser(loginDetail.username);
 		navigate("/dashboard");
-		e.preventDefault();
 	};
 
 	return (
