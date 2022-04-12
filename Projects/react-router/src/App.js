@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -10,6 +11,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
+	const [user, setUser] = useState(null)
 	return (
 		<BrowserRouter>
 			<nav>My Nav bar</nav>
@@ -19,8 +21,8 @@ function App() {
 					<Route path="about" element={<About />} />
 					<Route path="products" element={<Products />} />
 					<Route path="products/:productID" element={<SingleProduct />} />
-					<Route path="login" element = {<Login />} />
-					<Route path="dashboard" element = {<Dashboard />} />
+					<Route path="login" element = {<Login setUser = {setUser} />} />
+					<Route path="dashboard" element = {<Dashboard user = {user} />} />
 					<Route path="*" element={<Error />} />
 				</Route>
 			</Routes>

@@ -1,9 +1,66 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  return (
-    <div>Login</div>
-  )
-}
+const Login = ({ setUser }) => {
+	const [loginDetail, setLoginDetail] = useState({
+		username: "",
+		password: "",
+	});
 
-export default Login
+	const navigate = useNavigate();
+
+	const onChangeHandler = (e) => {
+		const { name, value } = e.target;
+		setLoginDetail((prevDetail) => ({
+			...prevDetail,
+			[name]: value,
+		}));
+	};
+
+	const onSubmitHandler = (e) => {
+		console.log(loginDetail);
+		if (!loginDetail.username && !loginDetail.password) {
+			return;
+		}
+		setUser(loginDetail.username);
+		navigate("/dashboard");
+		e.preventDefault();
+	};
+
+	return (
+		<div>
+			<form onSubmit={onSubmitHandler}>
+				<div>
+					<label>
+						Name :
+						<input
+							name="username"
+							type="text"
+							placeholder="username"
+							value={loginDetail.username}
+							onChange={onChangeHandler}
+							autoComplete="false"
+						/>
+					</label>
+				</div>
+				<div>
+					<label>
+						Password :
+						<input
+							name="password"
+							type="password"
+							placeholder="password"
+							value={loginDetail.password}
+							onChange={onChangeHandler}
+							autoComplete="false"
+						/>
+					</label>
+				</div>
+
+				<button>Login</button>
+			</form>
+		</div>
+	);
+};
+
+export default Login;

@@ -28,6 +28,14 @@ const StyledNavBar = () => {
 			>
 				Products
 			</NavLink>
+			<NavLink
+				style={({ isActive }) => {
+					return { color: isActive ? "red" : "green" };
+				}}
+				to="login"
+			>
+				Login
+			</NavLink>
 		</nav>
 	);
 };
