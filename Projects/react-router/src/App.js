@@ -11,7 +11,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
-	const [user, setUser] = useState(null)
+	const [user, setUser] = useState(null);
 	return (
 		<BrowserRouter>
 			<nav>My Nav bar</nav>
@@ -21,8 +21,8 @@ function App() {
 					<Route path="about" element={<About />} />
 					<Route path="products" element={<Products />} />
 					<Route path="products/:productID" element={<SingleProduct />} />
-					<Route path="login" element = {<Login setUser = {setUser} />} />
-					<Route path="dashboard" element = {<Dashboard user = {user} />} />
+					<Route path="login" element={<Login setUser={setUser} />} />
+					<Route path="dashboard" element={<Dashboard user={user} />} />
 					<Route path="*" element={<Error />} />
 				</Route>
 			</Routes>
