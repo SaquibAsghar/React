@@ -18,7 +18,6 @@ const Login = ({ setUser }) => {
 	};
 
 	const onSubmitHandler = (e) => {
-		console.log(loginDetail);
 		if (!loginDetail.username && !loginDetail.password) {
 			return;
 		}
