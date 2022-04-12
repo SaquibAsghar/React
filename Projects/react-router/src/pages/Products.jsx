@@ -4,7 +4,7 @@ import products from "../data";
 const Products = () => {
 	return (
 		<section className="section product">
-			<h2>Products page</h2>
+			<h2>Welcome to Products page</h2>
 
 			{products.map((product) => {
 				const { id, name } = product;
