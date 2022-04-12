@@ -18,11 +18,15 @@ const Login = ({ setUser }) => {
 	};
 
 	const onSubmitHandler = (e) => {
-        e.preventDefault();
-		if (!loginDetail.username && !loginDetail.password) {
+		e.preventDefault();
+		if (!loginDetail.username || !loginDetail.password) {
 			return;
 		}
 		setUser(loginDetail.username);
+		setLoginDetail({
+			username: "",
+			password: "",
+		});
 		navigate("/dashboard");
 	};
 
